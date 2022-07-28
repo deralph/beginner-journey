@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loader.css">
+    <title>ANIMATED GENERAL LOADER</title>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="text">0%</div>
+    <script>
+        const body = document.querySelector(".bg")
+        const text = document.querySelector(".text")
+
+        let load = 0
+        let int = setInterval(loader,30)
+        body.classList.add("fade")
+        function loader(){
+            load++
+
+            if(load > 99){
+                clearInterval(int)
+                text.style.display = "none"
+            }
+            text.innerText = `${load}%`
+            text.classList.add("load")
+            // body.classList.add("fadein")
+            // text.style.display = "none"
+        }
+        // function fade(){
+        //     body.classList.add("fadein")
+        // }
+
+    </script>
+</body>
+</html>

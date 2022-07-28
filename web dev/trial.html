@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>University website</title>
+        <style>
+        nav{
+            display: flex;
+            justify-content: space-between;
+          align-items: center;
+          padding: 2% 6%;
+        }
+        ul{
+        flex:1; 
+        text-align: right;  
+        }
+        ul li{
+             display: inline-block;
+            list-style: none;
+             /* position: relative;  */
+             padding:8px 12px; 
+        }
+        ul li a{
+            text-decoration: none;
+            color: orange;
+             font-size: 20px;  
+        }
+        .grid{
+            margin: auto;
+            border-radius: 10px;
+            background: cadetblue; 
+        }
+        .box-space{
+            display: grid;
+            grid-auto-rows:minmax(100px,auto);
+            grid-auto-columns:minmax(100px,200px);
+            grid-gap:5px;
+            grid-template-columns: repeat(3, 1fr);
+            /* position: absolute;  */
+            /* top: 50%; */
+            /* left: 50%;  */
+            /* transform: translate(-50%,-50%);  */
+              padding: 5px; 
+              
+        }
+        .box{
+            background-color: bisque;
+            padding: 50px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .box img{
+            width: 100%;
+        }
+        .box-1{
+        grid-column: 1/3;
+        }
+          .box-2{  
+          grid-column: 3;    
+          grid-row: 1/4;   
+          
+         } 
+         .box-5{
+         grid-row: 3;
+         grid-column: 1/3;
+          } 
+         table{
+             text-align:  center;
+         }
+         /* thead{ 
+             background: crimson;
+         }
+         /* table tr{ 
+             background: coral;
+         }
+         table tr:nth-child(even){
+             background: crimson;
+         } */
+
+        </style>
+    </head>
+    <body>
+            <nav>
+                <a href="#"><img src="geulgram/20211102183024.jpg" alt="" width="50" height="50"></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">COURSE</a></li>
+                        <li><a href="#">BLOG</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="grid">
+               <div class="box-space">
+               <div class="box box-1"> <img src="geulgram/20211102183942.jpg" alt=""></div>
+               <div class="box box-2"> <img src="geulgram/20211102183942.jpg" alt=""></div>
+               <div class="box box-3"> <img src="geulgram/20211102183942.jpg" alt=""></div>
+               <div class="box box-4"> <img src="geulgram/20211102183942.jpg" alt=""></div>
+               <div class="box box-5"> <img src="geulgram/20211102183942.jpg" alt=""></div>
+            </div> 
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>first name</th>
+                        <th>surname</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ayomikun</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Raphael</td>
+                        <td>John</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Blessing</td>
+                        <td>John</td>
+                       
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Esther</td>
+                        <td>John</td>
+                    </tr>
+                </tbody>
+            </table>
+            </body>
+            </html>

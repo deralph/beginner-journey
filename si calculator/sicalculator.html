@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sicalculator.css">
+    <title>SIMPLE INTEREST CALCULATOR</title>
+</head>
+<body>
+    <marquee behavior="" direction="" style="background: blue; color: aliceblue;">my name is raphael</marquee>
+    <ul>
+        <li>i am big</li>
+        <li>i am big</li>
+        <li>i am big</li>
+        <li>i am big</li>
+    </ul>
+    <div class="calculator">
+        <h1>Simple Interest Calculator</h1>
+        <label for="amount"> Principal Amount</label> <br>
+        <input type="number" placeholder="Enter Principal" id="amount"> <br>
+        <label for="rate"> Rate (%)</label> <br>
+        <input type="number" placeholder="Enter Rate" id="rate"> <br>
+        <label for="time"> Time</label> <br>
+        <input type="number" placeholder="Enter Time" id="time"> <br>
+        <button onclick="answer()">Calculate</button>
+        <p>Principal Amount :<span id="output_1"></span></p>
+        <p>Total Interest : <span id="output_2"></span></p>
+        <p>Total value : <span id="output_3"></span></p>
+    </div>
+    <form action="loader.html">
+        <input type="password"> <br>
+    <input type="color" required> <br>
+    <input type="range"><br>
+    <input type="number"required><br>
+    <input type="date"><br>
+    <input type="week"> <br>
+    <input type="time"><br>
+    <select name="pick me" id="me"> pick one
+        <option value="no 1"> one</option>
+        <option value="no 2"> two</option>
+        <option value="no 3">three</option>
+        <option value="no 4">four</option>
+    </select> <br>
+    <input type="submit" value="putme">
+    <p contenteditable="true" style="width: 200px;">my name is raphael</p>
+
+    </form>
+    <script>
+        function answer() {
+            let amount_input = parseInt(document.getElementById("amount").value)
+
+            let rate_input = parseInt(document.getElementById("rate").value)
+
+            let time_input = parseInt(document.getElementById("time").value)
+
+            let interest = amount_input*rate_input*time_input/100
+
+            let total = interest+amount_input;
+
+            document.getElementById("output_1").innerText=amount_input
+            document.getElementById("output_2").innerText=interest
+            document.getElementById("output_3").innerText=total
+        }
+    </script>
+ /* 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 */
+
+</body>
+</html>

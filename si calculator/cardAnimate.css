@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #ecf0f1;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+.card{
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 350px;
+    border-radius: 15px;
+    height: auto;
+}
+
+.card-header{
+    height: 200px;
+}
+
+.card-header img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.card-content{
+    background: #fff;
+    padding: 30px;
+}
+
+.card-title{
+    height: 20px;
+}
+
+.card-except{
+    color: #777;
+    margin: 10px 0 20px;
+}
+
+.author{
+    display: flex;
+}
+
+.profile-img img, .profile-img{
+    height: 40px;
+    border-radius: 50%;
+    width: 40px;
+}
+
+.author-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 10px;
+    width: 100px;
+}
+
+.author-info small{
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.animated-bg{
+    background: linear-gradient(to right,#ecf0f1 0%, #eef2f3 10%,#dce0f2 20%,#ccf3f2 100% );
+    background-size: 200% 100%;
+    animation: bgPos 1s linear infinite ;
+}
+
+.animated-bg-text{
+    border-radius: 50px;
+    display: inline-block;
+    height: 10px;
+    width: 100%;
+}
+
+@keyframes bgPos{
+    0%{
+        background-position: 50% 0;
+    }
+    100%{
+        background-position: -150% 0;
+    }
+}

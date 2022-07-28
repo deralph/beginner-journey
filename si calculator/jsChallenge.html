@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 25, 98, 67, 34, 23, 21, 56, 78, 67, 74,
+      ];
+      console.log(a.length);
+      let sub_array = [];
+      let super_array = [];
+      for (let i = 1; i < a.length; i += 2) {
+        // console.log(a[i])
+        let b = a[i];
+        sub_array.push(b);
+        // super_array.push(sub_array.slice(-1))
+      }
+      console.log(sub_array);
+      // console.log(super_array)
+      // let d = super_array[9]
+      // console.log(d)
+      let e = sub_array.filter((f) => f % 2 === 0);
+      console.log(e);
+      let sum = e.reduce((k, l) => k + l);
+      console.log(sum);
+      let mean = sum / e.length;
+      console.log(mean);
+
+      let z = a.reduce((no, high) => {
+        return high > no ? high : no;
+
+        // this is to return the highest no in an array
+      });
+
+      console.log(z);
+
+      let y = a.reduce((no, high) => {
+        if (high > no) {
+          return no;
+        } else {
+          return high;
+        }
+        // this is to return the highest no in an array
+      });
+
+      console.log(y);
+    </script>
+  </body>
+</html>

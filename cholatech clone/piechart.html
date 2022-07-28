@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+.pie-chart{
+    --w:250px;
+    width: var(--w);
+    aspect-ratio: 1;
+    display: inline-grid;
+    place-content: center;
+    position: relative;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+.pie-chart::before{
+    content: "";
+    inset: 0;
+    position: absolute;
+    background: radial-gradient(farthest-side, var(--c) 98%, #0000) top/ var(--b) var(--b) no-repeat, 
+    conic-gradient( var(--c) calc(var(--p) * 1%), #0000 0);
+}
+.pie-chart::after{
+    content: "";
+    inset:calc(50% -var(--b)/2);
+    position: absolute;
+    transform: rotate(calc(var(--p)*3.6deg)) translate(calc(50% -var(--w)/2));
+    border-radius: 50%;
+    background: var(--c);
+}
+    </style>
+    <div class="pie-chart"  class="--p:64; --c:purple; --b:10px"; > 64%</div>
+</body>
+</html>

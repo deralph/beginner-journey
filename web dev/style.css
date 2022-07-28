@@ -1,0 +1,60 @@
+/* *{ 
+    margin: 0;
+    padding: 0;
+/* } */
+    .header{
+       min-height:100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(Geulgram/20211027195642.jpg);
+        background-position: center;
+        background-size: cover;
+        /* position: relative; */
+       
+    }
+    nav{
+        display:flex;
+        justify-content: space-between;
+        padding: 2% 6%;
+    }
+ul{
+    flex: 1; 
+    text-align: right;
+}
+ul li{
+    display: inline-block;
+    list-style: none;
+    font-family: Arial;
+    /* padding: 8px 12px; */
+}
+ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    padding-left: 50px;
+    color: orange;
+}
+ul li a:hover{
+    color: blue;
+}
+#content{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    /* font-size: 25px; */
+}
+#content h1{
+    font-size: 60px;
+}
+span{
+    padding-top: 35px;
+}
+ #content>a{
+    border: 1px solid blue ;
+}
+@media(max-width:500px)
+{
+
+}

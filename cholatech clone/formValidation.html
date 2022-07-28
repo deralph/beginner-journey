@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form and email validation </title>
+</head>
+<body>
+    <!-- <form action="cholatech-clone.html" onsubmit="return validate()" > 
+    <input type="text" id="uname" placeholder="username" >
+    <input type="text" id="pass" placeholder="password" >
+    <input type="number" id="age" placeholder="age" >
+    <input type="submit" value="submit"> 
+    </form>
+    <script>
+        function validate(){
+            var uname = document.getElementById("uname").value;
+            var pass = document.getElementById("pass").value;
+            var age = document.getElementById("age").value;
+            if(pass.trim() == "" || uname.trim() == "" || age.trim() == "" ){
+                alert("missing credentials");
+                return false;
+            }
+            else if(uname ="ralph" && pass == "12345" && age >= 13 ){
+                alert("sign-up succesful");
+                return true;
+            } 
+            else if(age<13) {
+                alert("Underaged");
+                return false;
+            }
+            else{
+                alert("wrong id and password")
+                return false;
+            }
+        }
+    </script>
+     -->
+     <!-- other validation are done in the backend -->
+
+     <!-- email validation -->
+     <input type="email" id="mail" placeholder="example@gmail.com">
+     <input type="button" value="submit" onclick="validateEmail()">
+     <script>
+         function validateEmail(){
+             var email = document.getElementById("mail").value;
+             var regex = /^([a-z A-Z 0-9 \._]+)@([a-z A-Z]+).([a-z A-Z]{2,6})(.[a-z]{2,6})?$/
+             if (email.trim() == "" ){
+                    alert("please enter a valid email id");
+             }
+             else if(regex.test(email)){
+                 alert("email submitted successfully");
+             }
+             else{
+                 alert("wrong email id");
+             }
+         }
+
+        //  jraphael441@gmail.com
+     </script>
+</body>
+</html>

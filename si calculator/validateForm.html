@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" onsubmit=" validate()">
+        <label for="name">
+            <p>Enter your name</p>
+        <input type="text" placeholder="e.g John Doe" id="name" >
+    </label>
+    <label for="email">
+       <p> Enter your email</p>
+        <input type="email" placeholder="e.g example@mail.com" id="email" >
+    </label>
+    <label for="pnone-no">
+       <p> Enter your phone no.</p>
+        <input type="text" placeholder="e.g +2349080111111" id="phone" >
+    </label>
+    <select name="choose food" id="choose-food" >
+        <option value="">choose dish</option>
+        <option value="jollof rice and chicken">jollof rice and chicken</option>
+        <option value="jo llof rice and friedrice with chicken">jollof rice and friedrice with chicken</option>
+        <option value="fried rice and chicken">fried rice and chicken</option>
+        <option value="ofada rice and chicken">ofada rice and chicken</option>
+    </select>
+    <label for="no of chicken">
+        <p>Enter no of chicken</p>
+        <input type="number" placeholder="enter preferred amount" id="chickno" >
+    </label>
+    <input type="submit" value="place order">
+    </form>  
+
+    <script>
+// let name = document.getElementById("name").value
+// let email = document.getElementById("email").value
+// let phone = document.getElementById("phone").value
+// let food = document.getElementById("choose-food").value
+// let chicken = document.getElementById("chickno").value
+// let message = "please fill all input"
+
+function validate(){
+    // console.log("clicked")
+let name = document.getElementById("name").value
+let email = document.getElementById("email").value
+let phone = document.getElementById("phone").value
+let food = document.getElementById("choose-food")
+let chicken = document.getElementById("chickno").value
+let foodValue = food.options[food.selectedIndex].value
+let foodText = food.options[food.selectedIndex].text
+let regex = /[+234]\d+/
+console.log(foodValue)
+    if(name.trim() == "" || email.trim() == "" || phone.trim() == "" || foodValue =="" || chicken.trim() == ""){
+   alert("please fill all input")
+   console.log("clicked")
+    }
+    else if (phone.length !== 11 ){
+        alert("enter valid phone number")
+        console.log(phone.length)
+        // name.length
+        console.log("clicker")
+    }
+    else if (chicken.length > 1 ){
+        alert("please you cant order more 9 chickens ")
+        console.log("click")
+    }
+    else{
+        alert("your order was successful")
+    }
+    //  regex.test(chicken)?console.log(true):alert("enter valid phone number")
+}
+
+    </script>
+
+</body>
+</html>

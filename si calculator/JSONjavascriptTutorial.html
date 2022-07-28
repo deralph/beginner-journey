@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON javascript tutorial</title>
+</head>
+<body>
+
+    <div id="button">GET USER</div>
+    <div id="testButton">TEST MAP</div>
+    <div id="output"></div>
+
+    <script>
+
+      const button = document.getElementById("button")
+      button.addEventListener("click", addJSON)
+
+      const testButton = document.getElementById("testButton")
+      testButton.addEventListener("click", tester)
+
+      const output = document.querySelector("#output")
+
+      function tester(){
+        console.log("clicked")
+        let tempArray = [4,6,8,2,0,7,5,3]
+        const html = tempArray.map(function(val,i){
+            return '<li>'+i+'='+(val*2)+'<li>'
+           
+        })
+        console.log(html.join(''))
+        output.innerHTML = '<ul>'+html.join()+'</ul>'
+      }
+
+    //   string.prototype.capitalize = function(){
+    //       return this.charAt(0).toUpperCase() + this.slice(1)
+    //   }
+
+      function addJSON(){
+        //   console.log("clicked")
+        //   output.innerText = "WORKING"
+
+        //   this is for geetting a data from an external source
+        // const url = "https://api.myjson.com/bins/hqys2"
+        const url = "https://randomuser.me/api/?results=50"
+        output.innerHTML = ''
+        // that is the url in which the json file is stored 
+        // the https is also not added to avoid error in the console
+        fetch(url)
+        .then(function(response){
+            return response.json()
+            // return response.text()
+        })
+        .then(function(data){
+            console.log(data)
+            let people = data.results;
+            console.log(people)
+            return people.map(function(val,i){
+                let div = document.createElement('div')
+                let span = document.createElement('span')
+                let img = document.createElement('img')
+                let firstName = val.name.first.toUpperCase()
+                let lastName = val.name.last.toUpperCase()
+                span.innerHTML =  (i+1) +''+ firstName +''+ lastName 
+                img.src = val.picture.thumbnail
+                div.appendChild(span)
+                div.appendChild(img)
+                output.appendChild(div)
+                // console.log(val)
+                // output.innerHTML  = '<div>' + (i+1) +""+ firstName +""+ lastName + '</div>'
+           
+        })
+        // output.innerHTML = '<ul>'+html.join('')+'</ul>'
+            // console.log(people[0].name)
+            // output.innerText = "firstName ="+people[0].name.first+ "lastName ="+people[0].name.last
+            // JSON.parse(data)
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+      }
+
+    </script>
+
+    <!-- <div id="addButton">add to storage</div>
+    <div id="seeButton">view Storage</div>
+   first :<input type="text" id="firstName">
+   last :<input type="text" id="lastName"> -->
+    
+
+
+    <!-- <script>
+
+        document.getElementById("addButton").addEventListener("click", addToStorage)
+        document.getElementById("seeButton").addEventListener("click", viewStorage)
+       
+        const people = JSON.parse(localStorage.getItem('tester1')) || {"first":"none", "last":"none"}
+        console.log(people)
+
+        function addToStorage(){
+            let tempFirst = document.getElementById("firstName").value
+            let tempLast = document.getElementById("lastName").value
+            let myObj = JSON.stringify({"first":tempFirst, "last":tempLast})
+            console.log(myObj)
+            localStorage.setItem("tester1",myObj)
+            console.log("clicked"+myObj)
+        }
+
+        function viewStorage(){
+           let tempHolder = JSON.parse(localStorage.getItem("tester1")) || people
+
+            console.log(tempHolder)
+        }
+
+
+        // var tString = "Hello";
+        // var tSring2 = 'Hello';
+        // var tNumber = 3;
+        // var tBoolean = true;
+        // var tNull = null;
+        // var tUndefined = undefined;
+        // var tArray = ['test',30,[5,6,6,]]
+        // var tObject = {'first':'laurence'}
+        // var tObject2 = {first:'laurence'}
+        // var tObject3= {"first":'laurence'}
+        // var tObject4= {}
+        // tObject4.first = 'laurence'
+        // tObject4['last'] = 'ralph'
+        // // tObject4{middle} = "james"
+        // var tObject5 = {'myArray':tArray}
+        // tObject5.myObj = tObject4
+
+        // // lets talk json
+        // var myJson = {"name":"ralph","age":30}
+        // console.log(myJson)
+        // var myJSONstringify = JSON.stringify(myJson)
+        // console.log(myJSONstringify)
+        // var myJSONparsed = JSON.parse(myJSONstringify)
+        // console.log(myJSONparsed)
+        // myJSONparsed.name = "john"
+        // console.log(myJSONparsed)
+        // var newData = JSON.stringify(myJSONparsed)
+        // console.log(newData)
+    </script> -->
+</body>
+</html>

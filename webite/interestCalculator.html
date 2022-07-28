@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="interestCalculator.css">
+    <title>INTEREST CALCULATOR</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <h1>INTEREST <span>CALCULATOR</span></h1>
+            <form action="#" name="calc">
+                <input type="number" id="rate" name="rate" placeholder="Enter Your Rate">
+                <input type="number" id="time" name="time" placeholder="Enter Your Time">
+                <input type="number" id="princ" name="principal" placeholder="Enter Your Principal">
+            </form>
+            <button id="btn" onclick="calculate()">Check Interest Rate</button>
+            <button id="btn" onclick="location.reload()">Reset</button>
+            <div class="rate">
+                <p>The Simple Interest Rate Is <span id="simple"></span></p>
+                <p>The Compound Interest Rate Is <span id="compound"></span></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calculate(){
+        let rate = parseInt(document.getElementById("rate").value)
+        let time = parseInt(document.getElementById("time").value)
+        let princ = parseInt(document.getElementById("princ").value)
+        let simple = document.getElementById("simple")
+        let compound = document.getElementById("compound")
+
+       
+            let simp = rate*time*princ/100;
+            simple.innerText = simp;
+
+            let compd = princ*((1+(rate/100))**(time))
+            // or math.power(number,what its raised to)
+            // the above code is used in raising power
+            compd = compd.toFixed(3)
+            // the above code is to round the number up to 3 decimal place
+            compound.innerText = compd
+        }
+    //     let btn = document.getElementById("btn")
+    //     let rate = Number(document.calc.rate.value)
+    //     let time = Number(document.calc.time.vale)
+    //     let princ = Number(document.calc.principal.value)
+    //     let simple = document.getElementById("simple")
+
+    //    function calculate() {
+    //         var simp = Number(rate+time+princ)
+    //         simple.innerText = Number(simp)
+    //     }
+    </script>
+</body>
+</html>

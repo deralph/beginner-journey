@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="numb">
+    <p id="write">password must contain 8 characters</p>
+    <p id="num"> password must contain number</p>
+    <button onclick="changeColor()"></button>
+    <script>
+        
+        let x = document.getElementById("numb");
+        let y = document.getElementById("write");
+        let z= document.getElementById("num");
+function changeColor(){
+    if(x.length<8){
+           y.style.color="red";
+        }
+        else  if(isNaN(x)||x<1){
+            z.style.color="red";
+        }
+       
+        else{
+0
+        }
+    }
+    </script>
+</body>
+</html>

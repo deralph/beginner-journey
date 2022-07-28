@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.bg{
+    width: 100%;
+    height: 100vh;
+    background: url(geulgram/20211102183024.jpg) no-repeat center center/cover;
+    position: relative;
+    /* filter: blur(20px); */
+}
+.text{
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.load{
+    animation: loading 4s linear ;
+    /* display: none; */
+}
+@keyframes loading {
+    0%{
+        opacity: 1;
+        display: block;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.fade{
+    animation: fadein 3s linear 1;
+}
+@keyframes fadein{
+    0%{
+        filter: blur(20px);
+    }
+    100%{
+        filter: none;
+    }
+}
